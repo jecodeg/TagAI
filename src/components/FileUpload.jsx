@@ -225,7 +225,7 @@ const FileUpload = () => {
         )}
 
         {showDownload && (
-          <div className="mt-8 flex flex-col items-center">
+          <div className=" flex flex-col items-center">
             <h3
               className={`text-lg font-semibold mb-4 font-sans ${
                 theme === "dark" ? "text-gray-200" : "text-gray-700"
