@@ -21,6 +21,7 @@ const FileUpload = () => {
     "Inferring Model Insights",
     "Searching the Semantics",
     "Predicting XBRL Tags",
+    "Generating XML File",
   ];
 
   const onDrop = useCallback((acceptedFiles) => {
@@ -54,8 +55,8 @@ const FileUpload = () => {
   }, [files]);
 
   const simulateUploadStep = async () => {
-    const durations = [1000, 1500, 3000, 2500, 2000];
-    const progress = [10, 20, 35, 69, 87];
+    const durations = [1000, 1500, 3000, 2500, 2000, 1000];
+    const progress = [10, 20, 35, 69, 87, 95];
     setVisibleSteps([]);
     for (let i = 0; i < steps.length; i++) {
       setCurrentStep(i);
@@ -81,7 +82,7 @@ const FileUpload = () => {
   const handleDownload = () => {
     // Create a sample document for download
     const fileUrl =
-      "https://raw.githubusercontent.com/SKR04/TagAI/refs/heads/master/src/assets/Sample.pdf"; // Replace with your file's URL
+      "https://raw.githubusercontent.com/SKR04/TagAI/refs/heads/master/src/assets/Q1-2020-Quarterly-Performance-Report.xml"; // Replace with your file's URL
     const link = document.createElement("a");
     link.href = fileUrl;
     // link.download = "processed-document.txt"; // Optional: Sets default download name

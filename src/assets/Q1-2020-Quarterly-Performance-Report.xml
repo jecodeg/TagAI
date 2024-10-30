@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbrli:xbrl xmlns:xbrli="http://www.xbrl.org/2003/instance" 
+    xmlns:us-gaap="http://fasb.org/us-gaap/2023-01-31" 
+    xmlns:iso4217="http://www.xbrl.org/2003/iso4217" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    xmlns:link="http://www.xbrl.org/2003/linkbase">
+
+    <!-- Context for the Quarter -->
+    <xbrli:context id="Q1_2020_2021">
+        <xbrli:entity>
+            <xbrli:identifier scheme="http://www.sec.gov/CIK">000000000</xbrli:identifier>
+        </xbrli:entity>
+        <xbrli:period>
+            <xbrli:startDate>2020-04-01</xbrli:startDate>
+            <xbrli:endDate>2020-06-30</xbrli:endDate>
+        </xbrli:period>
+    </xbrli:context>
+
+    <!-- Reporting Entity Information -->
+    <us-gaap:EntityRegistrantName contextRef="Q1_2020_2021">Royal Berkshire Fire Authority</us-gaap:EntityRegistrantName>
+    <us-gaap:EntityFiscalPeriodFocus contextRef="Q1_2020_2021">Q1</us-gaap:EntityFiscalPeriodFocus>
+    <us-gaap:EntityFiscalYear contextRef="Q1_2020_2021">2020</us-gaap:EntityFiscalYear>
+
+    <!-- Financial Data: Employee Expenses -->
+    <us-gaap:SalariesAndEmployeeBenefitsExpense contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">28398</us-gaap:SalariesAndEmployeeBenefitsExpense>
+    <us-gaap:TrainingExpense contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">576</us-gaap:TrainingExpense>
+    <us-gaap:EmployeeBenefitsNonStation contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">10741</us-gaap:EmployeeBenefitsNonStation>
+    <us-gaap:EmployeeBenefitsStation contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">16835</us-gaap:EmployeeBenefitsStation>
+
+    <!-- Premises Costs -->
+    <us-gaap:PremisesRepairsAndMaintenance contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">722</us-gaap:PremisesRepairsAndMaintenance>
+    <us-gaap:PropertyTaxExpense contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">904</us-gaap:PropertyTaxExpense>
+    <us-gaap:CleaningAndSanitizationCosts contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">235</us-gaap:CleaningAndSanitizationCosts>
+    <us-gaap:UtilitiesExpense contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">441</us-gaap:UtilitiesExpense>
+
+    <!-- Supplies -->
+    <us-gaap:InsuranceExpense contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">335</us-gaap:InsuranceExpense>
+    <us-gaap:EquipmentExpense contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">849</us-gaap:EquipmentExpense>
+    <us-gaap:InformationTechnologyAndSoftwareExpense contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">680</us-gaap:InformationTechnologyAndSoftwareExpense>
+    <us-gaap:PersonalProtectiveEquipmentExpense contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">375</us-gaap:PersonalProtectiveEquipmentExpense>
+    <us-gaap:CommunicationExpense contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">934</us-gaap:CommunicationExpense>
+    <us-gaap:OccupationalHealthExpense contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">185</us-gaap:OccupationalHealthExpense>
+    <us-gaap:SubscriptionExpense contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">150</us-gaap:SubscriptionExpense>
+
+    <!-- Contractual and Service Expenses -->
+    <us-gaap:ContractualServicesExpense contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">1677</us-gaap:ContractualServicesExpense>
+    <us-gaap:LegalExpense contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">50</us-gaap:LegalExpense>
+    <us-gaap:ContributionToCollaborativeServices contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">872</us-gaap:ContributionToCollaborativeServices>
+
+    <!-- Transport and Travel -->
+    <us-gaap:VehicleRunningExpense contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">693</us-gaap:VehicleRunningExpense>
+    <us-gaap:TravelExpense contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">259</us-gaap:TravelExpense>
+
+    <!-- Pensions and Financing -->
+    <us-gaap:PensionExpense contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">424</us-gaap:PensionExpense>
+    <us-gaap:InterestExpense contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">392</us-gaap:InterestExpense>
+    <us-gaap:InvestmentIncome contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">-25</us-gaap:InvestmentIncome>
+    <us-gaap:RevenueFundingOfCapital contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">600</us-gaap:RevenueFundingOfCapital>
+
+    <!-- Income -->
+    <us-gaap:GrantIncome contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">2773</us-gaap:GrantIncome>
+    <us-gaap:RentalIncome contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">192</us-gaap:RentalIncome>
+    <us-gaap:RechargeIncome contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">308</us-gaap:RechargeIncome>
+    <us-gaap:OtherIncome contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">323</us-gaap:OtherIncome>
+
+    <!-- Total and Net Figures -->
+    <us-gaap:TotalOperatingExpense contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">34050</us-gaap:TotalOperatingExpense>
+    <us-gaap:NetIncomeLoss contextRef="Q1_2020_2021" unitRef="iso4217:GBP" decimals="0">141</us-gaap:NetIncomeLoss>
+
+    <!-- Narrative Disclosures -->
+    <us-gaap:DescriptionOfBusiness contextRef="Q1_2020_2021">Protecting the health, safety, and wellbeing of our staff was a key priority for the Service during the pandemic...</us-gaap:DescriptionOfBusiness>
+    <us-gaap:RiskMitigationDescription contextRef="Q1_2020_2021">Control measures were implemented to prevent virus transmission, ensuring the safety of employees and communities...</us-gaap:RiskMitigationDescription>
+
+</xbrli:xbrl>
