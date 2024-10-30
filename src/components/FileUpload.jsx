@@ -55,7 +55,7 @@ const FileUpload = () => {
   }, [files]);
 
   const simulateUploadStep = async () => {
-    const durations = [1000, 1500, 3000, 2500, 2000, 1000];
+    const durations = [1000, 1500, 3000, 2500, 2000, 2000];
     const progress = [10, 20, 35, 69, 87, 95];
     setVisibleSteps([]);
     for (let i = 0; i < steps.length; i++) {
@@ -79,16 +79,28 @@ const FileUpload = () => {
     simulateUploadStep();
   };
 
-  const handleDownload = () => {
-    // Create a sample document for download
+  const handleDownload = async () => {
     const fileUrl =
-      "https://raw.githubusercontent.com/SKR04/TagAI/refs/heads/master/src/assets/Q1-2020-Quarterly-Performance-Report.xml"; // Replace with your file's URL
-    const link = document.createElement("a");
-    link.href = fileUrl;
-    // link.download = "processed-document.txt"; // Optional: Sets default download name
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+      "https://raw.githubusercontent.com/SKR04/TagAI/refs/heads/master/src/assets/Q1-2020-Quarterly-Performance-Report.xml";
+
+    try {
+      const response = await fetch(fileUrl);
+      if (!response.ok) throw new Error("Failed to fetch the XML file");
+
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "Q1-2020-Quarterly-Performance-Report.xml"; // Sets the download filename
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+      // Clean up the URL object to release memory
+      URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error("Download failed:", error);
+    }
   };
 
   return (
@@ -156,7 +168,7 @@ const FileUpload = () => {
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="absolute top-2 right-2"
+                    className="absolute top-1 right-1 p-0"
                     onClick={() => removeFile(index)}
                   >
                     <X className="h-4 w-4" />
@@ -189,7 +201,7 @@ const FileUpload = () => {
         {isUploading && (
           <div className="mt-8 flex flex-col items-center">
             <Progress value={progress} className="mb-4" />
-            <div className="space-y-3 max-h-40 overflow-y-hidden transition-all duration-500">
+            <div className="space-y-3 max-h-50 overflow-y-hidden transition-all duration-500">
               {steps.map((step, index) => (
                 <div
                   key={step}
