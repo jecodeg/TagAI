@@ -78,30 +78,16 @@ const FileUpload = () => {
     simulateUploadStep();
   };
 
-  const handleDownload = async () => {
-    const fileUrl = "https://example.com/your-file-url/processed-document.pdf"; // Replace with actual PDF URL
-
-    try {
-      const response = await fetch(fileUrl, {
-        headers: {
-          // Any required headers, e.g., Authorization: "Bearer YOUR_TOKEN"
-        },
-      });
-
-      if (!response.ok) throw new Error("Failed to fetch PDF file");
-
-      const blob = await response.blob();
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = "processed-document.pdf"; // Sets download name
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      URL.revokeObjectURL(url); // Free memory
-    } catch (error) {
-      console.error("PDF download failed:", error);
-    }
+  const handleDownload = () => {
+    // Create a sample document for download
+    const fileUrl =
+      "https://raw.githubusercontent.com/SKR04/TagAI/refs/heads/master/src/assets/Sample.pdf"; // Replace with your file's URL
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    // link.download = "processed-document.txt"; // Optional: Sets default download name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
