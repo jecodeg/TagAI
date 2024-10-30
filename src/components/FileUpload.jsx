@@ -78,18 +78,30 @@ const FileUpload = () => {
     simulateUploadStep();
   };
 
-  const handleDownload = () => {
-    // Create a sample document for download
-    const content = "This is your processed document content";
-    const blob = new Blob([content], { type: "text/plain" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "processed-document.txt";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
+  const handleDownload = async () => {
+    const fileUrl = "https://example.com/your-file-url/processed-document.pdf"; // Replace with actual PDF URL
+
+    try {
+      const response = await fetch(fileUrl, {
+        headers: {
+          // Any required headers, e.g., Authorization: "Bearer YOUR_TOKEN"
+        },
+      });
+
+      if (!response.ok) throw new Error("Failed to fetch PDF file");
+
+      const blob = await response.blob();
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "processed-document.pdf"; // Sets download name
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url); // Free memory
+    } catch (error) {
+      console.error("PDF download failed:", error);
+    }
   };
 
   return (
