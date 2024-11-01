@@ -18,7 +18,7 @@ const Navbar = () => {
           </div>
           <div className="flex items-center space-x-4">
             <Link to="/">
-              <Button variant="ghost">Get Started</Button>
+              <Button className="hover:text-[#9C27B0] hover:bg-[#1a1a1a]">Get Started</Button>
             </Link>
             <Link to="/upload">
               <Button className="hover:text-[#9C27B0] hover:bg-[#1a1a1a]">
